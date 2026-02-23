@@ -1,6 +1,7 @@
 import { Coffee, CakeSlice, Leaf, ClipboardList } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import ScrollReveal from "@/components/ScrollReveal";
 
 const menuItems = [
   {
@@ -33,36 +34,40 @@ const MenuSection = () => {
   return (
     <section id="menu" className="bg-background py-20 px-6">
       <div className="mx-auto max-w-6xl">
-        <div className="text-center mb-14">
-          <h2 className="font-['Playfair_Display'] text-4xl font-bold text-foreground sm:text-5xl">
-            Our Menu
-          </h2>
-          <p className="mt-3 text-muted-foreground text-lg">
-            A taste of Tanzania in every cup and bite
-          </p>
-        </div>
+        <ScrollReveal>
+          <div className="text-center mb-14">
+            <h2 className="font-['Playfair_Display'] text-4xl font-bold text-foreground sm:text-5xl">
+              Our Menu
+            </h2>
+            <p className="mt-3 text-muted-foreground text-lg">
+              A taste of Tanzania in every cup and bite
+            </p>
+          </div>
+        </ScrollReveal>
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {menuItems.map((item) => (
-            <Card
-              key={item.title}
-              className="border-border bg-card hover:shadow-lg transition-shadow"
-            >
-              <CardContent className="p-6 text-center">
-                <item.icon className="mx-auto mb-4 text-primary" size={36} />
-                <h3 className="font-['Playfair_Display'] text-xl font-semibold text-foreground">
-                  {item.title}
-                </h3>
-                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                  {item.description}
-                </p>
-                <p className="mt-3 text-lg font-semibold text-primary">
-                  {item.price}
-                </p>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
+        <ScrollReveal delay={0.1}>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {menuItems.map((item) => (
+              <Card
+                key={item.title}
+                className="border-border bg-card hover:shadow-lg transition-shadow"
+              >
+                <CardContent className="p-6 text-center">
+                  <item.icon className="mx-auto mb-4 text-primary" size={36} />
+                  <h3 className="font-['Playfair_Display'] text-xl font-semibold text-foreground">
+                    {item.title}
+                  </h3>
+                  <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                    {item.description}
+                  </p>
+                  <p className="mt-3 text-lg font-semibold text-primary">
+                    {item.price}
+                  </p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </ScrollReveal>
 
         {/* Download full menu card */}
         <Card className="mt-10 border-primary/20 bg-primary/5">

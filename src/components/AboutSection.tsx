@@ -1,9 +1,11 @@
 import aboutImg from "@/assets/about-cafe.jpg";
+import ScrollReveal from "@/components/ScrollReveal";
 
 const AboutSection = () => {
   return (
     <section id="about" className="bg-primary/5 py-20 px-6">
       <div className="mx-auto max-w-6xl grid gap-12 md:grid-cols-2 items-center">
+        <ScrollReveal>
         {/* Text */}
         <div>
           <h2 className="font-['Playfair_Display'] text-4xl font-bold text-foreground sm:text-5xl">
@@ -26,21 +28,23 @@ const AboutSection = () => {
             with friends over chai masala, Pazuri is your home away from home.
           </p>
         </div>
+        </ScrollReveal>
 
-        {/* Image */}
-        <div className="relative">
-          <img
-            src={aboutImg}
-            alt="Cozy interior of Pazuri Cafe with warm lighting and plants"
-            className="rounded-2xl shadow-xl w-full object-cover aspect-square"
-            loading="lazy"
-          />
-          <div className="absolute -bottom-4 -left-4 rounded-xl bg-primary px-6 py-3 shadow-lg">
-            <p className="font-['Playfair_Display'] text-primary-foreground text-lg font-semibold">
-              Est. 2024
-            </p>
+        <ScrollReveal delay={0.2}>
+          <div className="relative">
+            <img
+              src={aboutImg}
+              alt="Cozy interior of Pazuri Cafe with warm lighting and plants"
+              className="rounded-2xl shadow-xl w-full object-cover aspect-square"
+              loading="lazy"
+            />
+            <div className="absolute -bottom-4 -left-4 rounded-xl bg-primary px-6 py-3 shadow-lg">
+              <p className="font-['Playfair_Display'] text-primary-foreground text-lg font-semibold">
+                Est. 2024
+              </p>
+            </div>
           </div>
-        </div>
+        </ScrollReveal>
       </div>
     </section>
   );
