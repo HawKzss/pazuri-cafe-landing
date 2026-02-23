@@ -1,18 +1,22 @@
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import ScrollReveal from "@/components/ScrollReveal";
 
 const LocationSection = () => {
   return (
     <section id="location" className="bg-background py-20 px-6">
       <div className="mx-auto max-w-6xl">
-        <div className="text-center mb-14">
-          <h2 className="font-['Playfair_Display'] text-4xl font-bold text-foreground sm:text-5xl">
-            Visit Us
-          </h2>
-          <p className="mt-3 text-muted-foreground text-lg">
-            We'd love to welcome you
-          </p>
-        </div>
+        <ScrollReveal>
+          <div className="text-center mb-14">
+            <h2 className="font-['Playfair_Display'] text-4xl font-bold text-foreground sm:text-5xl">
+              Visit Us
+            </h2>
+            <p className="mt-3 text-muted-foreground text-lg">
+              We'd love to welcome you
+            </p>
+          </div>
+        </ScrollReveal>
 
+        <ScrollReveal delay={0.1}>
         <div className="grid gap-10 md:grid-cols-2">
           {/* Map */}
           <div className="rounded-2xl overflow-hidden shadow-lg aspect-[4/3]">
@@ -73,6 +77,7 @@ const LocationSection = () => {
             </div>
           </div>
         </div>
+        </ScrollReveal>
       </div>
     </section>
   );

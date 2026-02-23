@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
+import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import hero1 from "@/assets/hero-1.jpg";
 import hero2 from "@/assets/hero-2.jpg";
@@ -40,8 +41,12 @@ const HeroSection = () => {
       {/* Green overlay */}
       <div className="absolute inset-0 bg-[hsl(114,37%,25%/0.65)]" />
 
-      {/* Content */}
-      <div className="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center text-white">
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+        className="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center text-white"
+      >
         <h1 className="font-['Playfair_Display'] text-5xl font-bold tracking-tight sm:text-7xl md:text-8xl">
           Pazuri Cafe
         </h1>
@@ -65,7 +70,7 @@ const HeroSection = () => {
             <a href="#menu">Order Now</a>
           </Button>
         </div>
-      </div>
+      </motion.div>
 
       {/* Slide indicators */}
       <div className="absolute bottom-8 left-1/2 z-10 flex -translate-x-1/2 gap-2">
