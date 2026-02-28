@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import ReservationDialog from "@/components/ReservationDialog";
 import hero1 from "@/assets/hero-1.jpg";
 import hero2 from "@/assets/hero-2.jpg";
 import hero3 from "@/assets/hero-3.jpg";
@@ -9,6 +10,7 @@ const slides = [hero1, hero2, hero3];
 
 const HeroSection = () => {
   const [current, setCurrent] = useState(0);
+  const [reservationOpen, setReservationOpen] = useState(false);
 
   const next = useCallback(() => {
     setCurrent((prev) => (prev + 1) % slides.length);
@@ -21,7 +23,6 @@ const HeroSection = () => {
 
   return (
     <section className="relative h-screen w-full overflow-hidden" aria-label="Hero">
-      {/* Slides */}
       {slides.map((src, i) => (
         <div
           key={i}
@@ -38,7 +39,6 @@ const HeroSection = () => {
         </div>
       ))}
 
-      {/* Green overlay */}
       <div className="absolute inset-0 bg-[hsl(114,37%,25%/0.65)]" />
 
       <motion.div
@@ -58,9 +58,9 @@ const HeroSection = () => {
             size="lg"
             variant="outline"
             className="border-white text-white hover:bg-white hover:text-primary bg-transparent text-base px-8"
-            asChild
+            onClick={() => setReservationOpen(true)}
           >
-            <a href="#location">Reserve a Table</a>
+            Reserve a Table
           </Button>
           <Button
             size="lg"
@@ -72,7 +72,6 @@ const HeroSection = () => {
         </div>
       </motion.div>
 
-      {/* Slide indicators */}
       <div className="absolute bottom-8 left-1/2 z-10 flex -translate-x-1/2 gap-2">
         {slides.map((_, i) => (
           <button
@@ -85,6 +84,8 @@ const HeroSection = () => {
           />
         ))}
       </div>
+
+      <ReservationDialog open={reservationOpen} onOpenChange={setReservationOpen} />
     </section>
   );
 };

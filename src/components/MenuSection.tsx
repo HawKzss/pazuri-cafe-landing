@@ -1,7 +1,9 @@
+import { useState } from "react";
 import { Coffee, CakeSlice, Leaf, ClipboardList } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import ScrollReveal from "@/components/ScrollReveal";
+import OrderDialog from "@/components/OrderDialog";
 
 const menuItems = [
   {
@@ -31,6 +33,8 @@ const menuItems = [
 ];
 
 const MenuSection = () => {
+  const [selectedItem, setSelectedItem] = useState<{ title: string; price: string } | null>(null);
+
   return (
     <section id="menu" className="bg-background py-20 px-6">
       <div className="mx-auto max-w-6xl">
@@ -50,7 +54,8 @@ const MenuSection = () => {
             {menuItems.map((item) => (
               <Card
                 key={item.title}
-                className="border-border bg-card hover:shadow-lg transition-shadow"
+                className="border-border bg-card hover:shadow-lg transition-shadow cursor-pointer"
+                onClick={() => setSelectedItem({ title: item.title, price: item.price })}
               >
                 <CardContent className="p-6 text-center">
                   <item.icon className="mx-auto mb-4 text-primary" size={36} />
@@ -89,6 +94,13 @@ const MenuSection = () => {
           </CardContent>
         </Card>
       </div>
+
+      <OrderDialog
+        open={!!selectedItem}
+        onOpenChange={(open) => !open && setSelectedItem(null)}
+        itemName={selectedItem?.title ?? ""}
+        itemPrice={selectedItem?.price ?? ""}
+      />
     </section>
   );
 };
