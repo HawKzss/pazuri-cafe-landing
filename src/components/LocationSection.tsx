@@ -20,7 +20,16 @@ const LocationSection = () => {
         <div className="grid gap-10 md:grid-cols-2">
           {/* Map */}
           <div className="rounded-2xl overflow-hidden shadow-lg aspect-[4/3]">
-           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3953.167417978987!2d35.698196275004925!3d-7.7720649922473575!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x185417d46bf74b31%3A0xb49489a19da504ac!2sGangilonga%20Supermarket!5e0!3m2!1sen!2sus!4v1772273181063!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe
+              title="Pazuri Cafe Location"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3953.167417978987!2d35.698196275004925!3d-7.7720649922473575!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x185417d46bf74b31%3A0xb49489a19da504ac!2sGangilonga%20Supermarket!5e0!3m2!1sen!2sus!4v1772273181063!5m2!1sen!2sus"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
           </div>
 
           {/* Contact details */}
