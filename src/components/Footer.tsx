@@ -1,5 +1,6 @@
 import { Instagram, Facebook, MessageCircle } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
+import { Link } from "react-router-dom";
 
 const socialLinks = [
   { icon: Instagram, href: "https://instagram.com/pazuricafe", label: "Instagram" },
@@ -30,9 +31,10 @@ const Footer = () => {
 
           {/* Quick links */}
           <nav className="flex flex-wrap justify-center gap-6 text-sm opacity-80">
-            <a href="#menu" className="hover:opacity-100 transition-opacity">Menu</a>
-            <a href="#about" className="hover:opacity-100 transition-opacity">About Us</a>
-            <a href="#location" className="hover:opacity-100 transition-opacity">Location</a>
+            <a href="/#menu" className="hover:opacity-100 transition-opacity">Menu</a>
+            <a href="/#about" className="hover:opacity-100 transition-opacity">About Us</a>
+            <a href="/#location" className="hover:opacity-100 transition-opacity">Location</a>
+            <Link to="/gallery" className="hover:opacity-100 transition-opacity">Gallery</Link>
           </nav>
 
           <p className="text-sm opacity-70">
