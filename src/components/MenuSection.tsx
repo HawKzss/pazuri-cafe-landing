@@ -4,6 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import ScrollReveal from "@/components/ScrollReveal";
 import OrderDialog from "@/components/OrderDialog";
+import menuPdf from "@/assets/pazuri-cafe-menu.pdf.asset.json";
 
 const menuItems = [
   {
@@ -88,8 +89,10 @@ const MenuSection = () => {
                 </p>
               </div>
             </div>
-            <Button className="bg-primary text-primary-foreground hover:bg-primary/90 px-8">
-              Download PDF
+            <Button asChild className="bg-primary text-primary-foreground hover:bg-primary/90 px-8">
+              <a href={menuPdf.url} download="Pazuri_Cafe_Menu.pdf">
+                Download PDF
+              </a>
             </Button>
           </CardContent>
         </Card>
